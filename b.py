@@ -28,7 +28,7 @@ def nu4(x, a, b):
     return res
 
 
-def zFuncAx1(a, b, c='r', axNum=1):
+def zFunc(a, b, c='r', axNum=1):
     funcX = []
     funcY = []
     x = a
@@ -58,7 +58,7 @@ def zFuncAx1(a, b, c='r', axNum=1):
         ax4.plot(funcX, funcY, c)
 
 
-def sFuncAx1(a, b, c='b', axNum=1):
+def sFunc(a, b, c='b', axNum=1):
     funcX = []
     funcY = []
     x = a
@@ -89,9 +89,37 @@ def sFuncAx1(a, b, c='b', axNum=1):
         ax4.plot(funcX, funcY, c)
 
 
-zFuncAx1(1, 35, 'r')
-sFuncAx1(25-5, 55-5, 'y')
-zFuncAx1(25 + 30 - 5, 65 + 30 - 5, 'y')
-sFuncAx1(75, 100, 'b')
+def lineFunc(a, b, c='g', axNum=1):
+    funcX = []
+    funcY = []
+    x = a
+    while x < b:
+        funcX.append(x)
+        funcY.append(1)
+        x += 0.01
+    if axNum == 1:
+        ax1.plot(funcX, funcY, c)
+    if axNum == 2:
+        ax2.plot(funcX, funcY, c)
+    if axNum == 3:
+        ax3.plot(funcX, funcY, c)
+    if axNum == 4:
+        ax4.plot(funcX, funcY, c)
+
+
+zFunc(1, 35, 'r')
+sFunc(25-5, 55-5, 'y')
+zFunc(25 + 30 - 5, 65 + 30 - 5, 'y')
+sFunc(75, 100, 'b')
+
+zFunc(100, 700, 'r', 2)
+sFunc(700 - ((850 + 701)/2 - 700), 700, 'y', 2)
+lineFunc(700, 850, 'y', 2)
+zFunc(850, 950, 'y', 2)
+sFunc(851, 950, 'b', 2)
+
+zFunc(0, 1, 'b', 3)
+sFunc(0, 1, 'r', 3)
+
 
 plt.show()
