@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import math
+
+fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2)
 
 
 def nu1(x, a, b):
@@ -27,7 +28,7 @@ def nu4(x, a, b):
     return res
 
 
-def zFunc(a, b, c = 'r'):
+def zFuncAx1(a, b, c='r', axNum=1):
     funcX = []
     funcY = []
     x = a
@@ -47,10 +48,17 @@ def zFunc(a, b, c = 'r'):
             funcY.append(1)
 
         x += 0.01
-    plt.plot(funcX, funcY, c)
+    if axNum == 1:
+        ax1.plot(funcX, funcY, c)
+    if axNum == 2:
+        ax2.plot(funcX, funcY, c)
+    if axNum == 3:
+        ax3.plot(funcX, funcY, c)
+    if axNum == 4:
+        ax4.plot(funcX, funcY, c)
 
 
-def sFunc(a, b, c = 'b'):
+def sFuncAx1(a, b, c='b', axNum=1):
     funcX = []
     funcY = []
     x = a
@@ -71,13 +79,19 @@ def sFunc(a, b, c = 'b'):
 
         x += 0.01
 
-    plt.plot(funcX, funcY, c)
+    if axNum == 1:
+        ax1.plot(funcX, funcY, c)
+    if axNum == 2:
+        ax2.plot(funcX, funcY, c)
+    if axNum == 3:
+        ax3.plot(funcX, funcY, c)
+    if axNum == 4:
+        ax4.plot(funcX, funcY, c)
 
 
-
-zFunc(1, 35)
-sFunc(25-5, 55-5, 'y')
-zFunc(25 + 30 - 5 , 65 + 30 - 5, 'y')
-sFunc(75, 100)
+zFuncAx1(1, 35, 'r')
+sFuncAx1(25-5, 55-5, 'y')
+zFuncAx1(25 + 30 - 5, 65 + 30 - 5, 'y')
+sFuncAx1(75, 100, 'b')
 
 plt.show()
