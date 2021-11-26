@@ -23,12 +23,13 @@ def nu3(x, a, b):
 
 def nu4(x, a, b):
 
-    res = 1 - 2 *((x - b) / (b-a))**2
+    res = 1 - 2 * ((x - b) / (b-a))**2
     return res
 
 
-def zFunc(a, b):
-
+def zFunc(a, b, c = 'r'):
+    funcX = []
+    funcY = []
     x = a
 
     while x < b:
@@ -45,11 +46,13 @@ def zFunc(a, b):
         else:
             funcY.append(1)
 
-        x += 0.5
+        x += 0.01
+    plt.plot(funcX, funcY, c)
 
 
-def sFunc(a, b):
-
+def sFunc(a, b, c = 'b'):
+    funcX = []
+    funcY = []
     x = a
 
     while x < b:
@@ -66,34 +69,15 @@ def sFunc(a, b):
         elif y < x and x < b:
             funcY.append(nu4(x, a, b))
 
-        x += 0.5
+        x += 0.01
+
+    plt.plot(funcX, funcY, c)
 
 
 
-
-def piFunc(a, b):
-
-    sFunc(a, b)
-    zFunc(b, 2 * (b - a))
-
-    
-
-
-funcX = []
-funcY = []
-
-
-h = 5
-
-x = 0
-a = 0
-b = 20
-piFunc(a, b)
-
-
-fig = plt.figure()
-
-plt.plot(funcX, funcY)
-
+zFunc(1, 35)
+sFunc(25-5, 55-5, 'y')
+zFunc(25 + 30 - 5 , 65 + 30 - 5, 'y')
+sFunc(75, 100)
 
 plt.show()
