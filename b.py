@@ -107,10 +107,10 @@ def lineFunc(a, b, c='g', axNum=1):
         ax4.plot(funcX, funcY, c)
 
 
-zFunc(1, 35, 'r')
-sFunc(25-5, 55-5, 'y')
-zFunc(25 + 30 - 5, 65 + 30 - 5, 'y')
-sFunc(75, 100, 'b')
+zFunc(1, 50, 'r')
+sFunc(15, 55, 'y')
+zFunc(25 + 30, 95, 'y')
+sFunc(50, 100, 'b')
 
 zFunc(100, 700, 'r', 2)
 sFunc(700 - ((850 + 701)/2 - 700), 700, 'y', 2)
