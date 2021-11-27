@@ -28,7 +28,7 @@ def nu4(x, a, b):
     return res
 
 
-def zFunc(a, b, c='r', axNum=1):
+def zFunc(a, b, c='r', axNum=1, temp=False, t=0):
     funcX = []
     funcY = []
     x = a
@@ -50,15 +50,24 @@ def zFunc(a, b, c='r', axNum=1):
         x += 0.01
     if axNum == 1:
         ax1.plot(funcX, funcY, c)
+        if temp == True:
+            ax1.axvline(x = t, color = 'b', label = 'temp')
     if axNum == 2:
         ax2.plot(funcX, funcY, c)
+        if temp == True:
+            ax2.axvline(x = t, color = 'b', label = 'temp')
     if axNum == 3:
         ax3.plot(funcX, funcY, c)
+        if temp == True:
+            ax3.axvline(x = t, color = 'b', label = 'temp')
     if axNum == 4:
         ax4.plot(funcX, funcY, c)
+        if temp == True:
+            ax4.axvline(x = t, color = 'b', label = 'temp')
+    
 
 
-def sFunc(a, b, c='b', axNum=1):
+def sFunc(a, b, c='b', axNum=1, temp=False, t=0):
     funcX = []
     funcY = []
     x = a
@@ -81,45 +90,66 @@ def sFunc(a, b, c='b', axNum=1):
 
     if axNum == 1:
         ax1.plot(funcX, funcY, c)
+        if temp == True:
+            ax1.axvline(x = t, color = 'b', label = 'temp')
     if axNum == 2:
         ax2.plot(funcX, funcY, c)
+        if temp == True:
+            ax2.axvline(x = t, color = 'b', label = 'temp')
     if axNum == 3:
         ax3.plot(funcX, funcY, c)
+        if temp == True:
+            ax3.axvline(x = t, color = 'b', label = 'temp')
     if axNum == 4:
         ax4.plot(funcX, funcY, c)
+        if temp == True:
+            ax4.axvline(x = t, color = 'b', label = 'temp')
 
 
-def lineFunc(a, b, c='g', axNum=1):
+def lineFunc(a, b, c='g', axNum=1, temp = False,t=0):
     funcX = []
     funcY = []
     x = a
+    sec_cord = 0
     while x < b:
         funcX.append(x)
         funcY.append(1)
         x += 0.01
     if axNum == 1:
         ax1.plot(funcX, funcY, c)
+        if temp == True:
+            ax1.axvline(x = t, color = 'b', label = 'temp')
     if axNum == 2:
         ax2.plot(funcX, funcY, c)
+        if temp == True:
+            ax2.axvline(x = t, color = 'b', label = 'temp')
     if axNum == 3:
         ax3.plot(funcX, funcY, c)
+        if temp == True:
+            ax3.axvline(x = t, color = 'b', label = 'temp')
     if axNum == 4:
         ax4.plot(funcX, funcY, c)
+        if temp == True:
+            ax4.axvline(x = t, color = 'b', label = 'temp')
+    
 
+temp = 35
+pechT = 700
+mode = 1
 
-zFunc(1, 50, 'r')
-sFunc(15, 55, 'y')
-zFunc(25 + 30, 95, 'y')
-sFunc(50, 100, 'b')
+zFunc(1, 50, 'r', 1, True, temp)
+sFunc(15, 55, 'y', 1, True, temp)
+zFunc(25 + 30, 95, 'y', 1, False, 0)
+sFunc(50, 100, 'b', 1, False, 0)
 
-zFunc(100, 700, 'r', 2)
-sFunc(700 - ((850 + 701)/2 - 700), 700, 'y', 2)
-lineFunc(700, 850, 'y', 2)
-zFunc(850, 950, 'y', 2)
-sFunc(851, 950, 'b', 2)
+zFunc(100, 700, 'r', 2, True, pechT)
+sFunc(700 - ((850 + 701)/2 - 700), 700, 'y', 2, True, pechT)
+lineFunc(700, 850, 'y', 2, True, pechT)
+zFunc(850, 950, 'y', 2, True, pechT)
+sFunc(851, 950, 'b', 2, True, pechT)
 
-zFunc(0, 1.001, 'b', 3)
-sFunc(0, 1.001, 'r', 3)
+zFunc(0, 1.001, 'b', 3, True, mode)
+sFunc(0, 1.001, 'r', 3, True, mode)
 
 
 #  1 2 3
