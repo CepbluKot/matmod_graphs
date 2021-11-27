@@ -118,8 +118,16 @@ lineFunc(700, 850, 'y', 2)
 zFunc(850, 950, 'y', 2)
 sFunc(851, 950, 'b', 2)
 
-zFunc(0, 1, 'b', 3)
-sFunc(0, 1, 'r', 3)
+zFunc(0, 1.001, 'b', 3)
+sFunc(0, 1.001, 'r', 3)
+
+
+#  1 2 3
+
+zFunc(0, 1.5, 'r', 4)
+sFunc(0, 1.5, 'y', 4)
+zFunc(1.5, 3, 'y', 4)
+sFunc(1.5, 3, 'b', 4)
 
 
 plt.show()
