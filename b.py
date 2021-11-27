@@ -159,7 +159,7 @@ def lineFunc(a, b, c='g', axNum=1, temp = False,t=0):
 
 temp = 35
 pechT = 700
-mode = 1
+speed = 1
 
 zFunc(1, 50, 'r', 1, True, temp, 'temp')
 sFunc(15, 55, 'y', 1, True, temp)
@@ -172,13 +172,13 @@ lineFunc(700, 850, 'y', 2, True, pechT)
 zFunc(850, 950, 'y', 2, True, pechT)
 sFunc(851, 950, 'b', 2, True, pechT)
 
-zFunc(0, 1.001, 'b', 3, False, 0, 'speed')
+zFunc(0, 1.001, 'b', 3, True, speed,'speed')
 sFunc(0, 1.001, 'r', 3, False, 0)
 
 
 #  1 2 3
 
-zFunc(0, 1.5, 'r', 4, True, mode,'mode')
+zFunc(0, 1.5, 'r', 4)
 sFunc(0, 1.5, 'y', 4)
 zFunc(1.5, 3, 'y', 4)
 sFunc(1.5, 3, 'b', 4)
